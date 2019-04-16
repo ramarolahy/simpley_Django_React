@@ -1,0 +1,10 @@
+.env
+.pyc
+__pycache__/
+local_settings.py
+myvenv/
+db.sqlite3
+.DS_store
+.log
+.pot
+migrations/
