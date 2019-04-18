@@ -1,0 +1,39 @@
+{
+  "name": "final-project-ramarolahy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./liveSimpley/planSimpleyFE/src/index.js --output ./liveSimpley/planSimpleyFE/static/frontend/main.js",
+    "build": "webpack --mode production ./liveSimpley/planSimpleyFE/src/index.js --output ./liveSimpley/planSimpleyFE/static/frontend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramarolahy/final-project-ramarolahy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramarolahy/final-project-ramarolahy/issues"
+  },
+  "homepage": "https://github.com/ramarolahy/final-project-ramarolahy#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
+  }
+}

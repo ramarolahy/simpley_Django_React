@@ -1,3 +1,6 @@
 django-webpack-loader
 djangorestframework
 django-cors-headers
+django-rest-knox
+pip-lock
+coverage

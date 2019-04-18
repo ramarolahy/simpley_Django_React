@@ -1,0 +1,650 @@
+/* =========== PAGE ============== */
+html {
+  min-height: 100vh;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow-y: scroll;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(rgb(28, 45, 54), rgb(17, 27, 32)) no-repeat fixed;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+/* =========== NAVBAR - RADIAL MENU ============== */
+/* ===================================== */
+
+div.wrap__navbar-brand {
+  position: relative;
+  width: 300px;
+}
+
+div#radial-container {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+div.avatar {
+  position: absolute;
+  /* Check position inside navbar */
+  left: 40px;
+  bottom: 40px;
+  width: 130px;
+  height: 130px;
+  border: 3px solid #48606b;
+  border-radius: 50%;
+  z-index: 99;
+  cursor: pointer;
+  background-position: center, center; /* Center the image */
+  background-repeat: no-repeat, no-repeat; /* Do not repeat the image */
+  background-size: cover, cover; /* Resize the background image to cover the entire container */
+  -webkit-box-shadow:  0 7px 20px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow:  0 7px 20px  rgba(0, 0, 0, 0.7);
+  box-shadow:  0 7px 20px  rgba(0, 0, 0, 0.7);
+}
+
+
+div.wrap {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 10;
+  -webkit-box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.5);
+  box-shadow:  0px 0px 20px rgba(0, 0, 0, 0.5);
+  filter: url("#filter");
+  -webkit-filter: url("#filter");
+}
+
+div.wrap .blob {
+  display: block;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: absolute;
+  /* Avatar dimensions*/
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+
+div.wrap > .blob:not([for="checking"]) {
+  /* Initial dimentions of each buttons */
+  position: absolute;
+  z-index: 0;
+  width: 50px;
+  height: 50px;
+  left: 45px;
+  bottom: 45px;
+  font-size: 30px;
+}
+div.wrap > a.blob:not([for="checking"]) {
+  color: #0e262e;
+}
+
+div.wrap > a.blob:not([for="checking"]):hover {
+  color: #adc0c3;
+  border: 1px solid #244957;
+}
+
+i.fas.nav-btn {
+  position: absolute;
+  font-size: 1em;
+  top: 20%;
+  left: 50%;
+  background-color: transparent;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+
+
+i.fas.fa-camera-retro {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: rgba(147, 175, 193, 0.6);
+  font-size: 1.5em;
+}
+
+i.fas.fa-camera-retro:hover {
+  color: rgb(168, 197, 215);
+}
+
+label[for="avatarInput"] {
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(47, 59, 75, 0.4);
+  width: 40px;
+  height: 40px;
+}
+
+div.wrap > #checking~ .blob {
+  z-index: 10;
+}
+/* first child: hidden checkbox */
+
+/* second child: settings button */
+div.wrap > #checking ~ .blob:nth-child(2) {
+  left: 0px;
+  bottom: 135px;
+}
+/* second child: planner button */
+div.wrap > #checking ~ .blob:nth-child(3) {
+  left: 110px;
+  bottom: 110px;
+}
+/* second child: logout button */
+div.wrap > #checking ~ .blob:nth-child(4) {
+  left: 135px;
+  bottom: 0px;
+}
+
+
+/* ===================================== */
+/* ===================================== */
+/* =========== CONTAINERS ============== */
+
+div.container {
+  position: relative;
+  top: 0px;
+}
+
+div.wrap__error_msg {
+  position: relative;
+}
+
+
+div.jumbotron {
+  height: 180px;
+}
+
+div.main_container {
+  background-color: rgba(0, 0, 0, 0.09);
+  min-width: 640px;
+  border-radius: 10px;
+  padding: 5px 20px 3px 20px;
+  width: auto;
+  min-height: 750px;
+  overflow-y: scroll;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+div.list_wrap {
+  padding-bottom: 50px;
+}
+
+div.input_wrap {
+  width: 600px;
+  height: 70px;
+  bottom: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  position: fixed;
+}
+
+div.wrap-home-links {
+  top: 50%;
+  position: relative;
+  height: 300px;
+}
+
+div.wrap_home__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(38, 113, 96, 0.69);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 50px 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+div.wrap_home__icon:hover {
+  box-shadow:  0px 3px 30px 5px rgba(8, 11, 17, 0.92);
+}
+div.entry_item_wrap {
+  background-color: rgba(68, 211, 229, 0.03);
+  border: 0.5px solid rgba(52, 72, 92, 0.6);
+  border-radius: 5px;
+  width: 600px;
+  height: 60px;
+  margin-top: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+div.entry_item_wrap.true {
+  background-color: rgba(48, 123, 141, 0.03);
+  border: none;
+  border-radius: 5px;
+  width: 600px;
+  height: 60px;
+  margin-top: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+div.empty_entry_item_wrap {
+  background-color: rgba(44, 107, 130, 0.02);
+  border: none;
+  border-radius: 5px;
+  width: 600px;
+  height: 60px;
+  margin-top: 10px;
+  position: relative;
+}
+
+
+div.entry_item_wrap:hover {
+  border: 0.5px solid rgb(22, 108, 149);
+  background-color: rgba(68, 211, 229, 0.06);
+  box-shadow: 0px 0.5px 7px rgba(0, 0, 0, 0.26);
+  bottom: 0.5px;
+}
+
+div.entry_item_wrap.true:hover {
+  border: none;
+  background-color: rgba(55, 147, 165, 0.06);
+  box-shadow: none;
+  bottom: 0.5px;
+}
+
+div.empty_entry_label {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  padding-left: 60px;
+  cursor: pointer;
+  width: 600px;
+  height: 60px;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+div.empty_entry_label:hover {
+  border: 0.5px solid rgb(35, 86, 110);
+}
+
+/* =========== TEXTS ============== */
+
+svg.big-logo {
+  cursor: pointer;
+}
+h3.title_home__icon {
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+span.error_msg.text-center  {
+  background-color: rgba(21, 39, 47, 0.87);
+  padding: 5px 20px;
+  font-size: 1.2em;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+}
+
+div.today_message > span.error_msg.text-center {
+  position: absolute;
+  top: -23px;
+  width: auto;
+}
+
+span.addTodo_placeholder {
+  color: rgba(79, 96, 101, 0.31);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+span.wrap__icon_info-edit {
+  right: 90px;
+}
+
+span.wrap__icon_info-menu {
+  right: 10px;
+}
+
+p.welcome-text {
+  padding-top: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.7em;
+}
+
+/* =========== LINKS ============== */
+
+a {
+  color: #00B7FF;
+}
+a.navbar-brand {
+  text-shadow: 0 1px 10px black;
+  font-size: 3em;
+  font-family: 'Pacifico', cursive;
+  position: absolute;
+  left: 30px;
+  bottom: -30px;
+}
+
+svg.big-logo > a {
+  text-decoration: none;
+}
+p.signup-invite > span > a, p.login-invite > span > a {
+  text-decoration: none;
+}
+p.signup-invite > span > a:hover, p.login-invite > span > a:hover {
+  text-decoration: none;
+  color: #00B7FF;
+  font-weight: bolder;
+}
+
+/* =========== LISTS ============== */
+ul.navbar-nav {
+  padding-bottom: 10px;
+}
+
+li.nav-item {
+  font-size: 1.2em;
+  font-family: 'Lato', sans-serif;
+}
+
+/* =========== FORMS ============== */
+
+.api_test {
+  border: 0.5px solid rgba(255, 255, 255, 0.21);
+  background-color: transparent;
+  border-radius: 7px;
+  padding: 5px 15px;
+  color: white;
+  position: fixed;
+}
+#create_read {
+  top: 7px;
+  right: 250px;
+}
+#update {
+  top: 7px;
+  right: 140px;
+}
+#delete {
+  top: 7px;
+  right: 30px;
+}
+
+form#loginForm, form#signupForm {
+  padding-top: 45px;
+  width: 450px;
+}
+
+div[class="form-group"] > input {
+  background: rgba(21, 39, 47, 0.8);
+  color: rgba(255, 243, 243, 0.76);
+  border: 0.5px solid #2a414d;
+}
+
+div[class="form-group"] > input:focus {
+  background: rgba(21, 39, 47, 0.51);
+  color: rgba(255, 243, 243, 0.76);
+  border: 0.5px solid #b4b4b4;
+}
+
+input.new_entry_input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+  background-color:  rgb(16, 20, 22);
+  border-radius: 5px;
+  box-shadow: 0px 2px 15px rgb(9, 15, 19);
+  padding-left: 60px;
+  color: rgb(187, 202, 212);
+  font-size: 1.5em;
+  height: 60px;
+  width: 600px;
+}
+
+input.new_entry_input:focus {
+   border: 0.5px solid rgb(35, 86, 110);
+ }
+
+input.new_entry_input.empty {
+  border: 0.5px solid rgb(110, 53, 41);
+}
+
+input.new_entry_input::placeholder {
+  color: rgba(113,132,135,0.25);
+  font-weight: 300;
+}
+
+input.entry_label {
+  background-color: rgba(10, 18, 23, 0.1);
+  color: rgb(193, 211, 216);
+  border: none;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  width: 60%;
+  font-size: 1.2em;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+input.entry_label:focus {
+  border:rgb(193, 211, 216);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+input.entry_label:read-only {
+  color: rgb(193, 211, 216);
+  background-color: transparent;
+}
+
+input.entry_label.true:read-only {
+  color: rgb(73, 89, 94);
+  background-color: transparent;
+}
+
+button.all_btn {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button.new_entry_btn {
+  position: absolute;
+  display: none;
+  top: 32px;
+  left: 17px;
+}
+
+button.wrap__icon_info, span.wrap__icon_info.wrap__icon_info-edit {
+  font-size: 1.7em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button#login, button#signup {
+  margin-top: 10px;
+  background-color: #267160;
+  border: none;
+  width: 100%;
+  position: relative;
+}
+
+button#login:hover, button#signup:hover {
+  bottom: 2px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button.hidden.wrap__icon_info-delete {
+  right: 20px;
+}
+
+button.hidden.wrap__icon_info--check {
+  left: 15px;
+}
+
+button.hidden {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+}
+
+/* =========== ICONS ============== */
+
+i.home__icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+i.icon_info.fas.fa-ellipsis-v {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+i.fa-check{
+  position: relative;
+  right: 5px;
+  font-size: 1.2em;
+}
+
+i.fa-check:hover, i.fa-check.true{
+  color: rgb(67, 170, 106);
+}
+
+i.fa-pencil-alt:hover{
+  color: cornflowerblue;
+}
+
+
+i.fa-trash-alt:hover {
+  color: orangered;
+}
+
+i.fa-plus {
+  font-size: 1.3em;
+  color: #166c95;
+}
+
+i.addTodo_placeholder {
+  font-size: 1.3em;
+  color: #166c95;
+  position: absolute;
+  left: 27px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+i.icon_info {
+  color: rgba(18, 53, 61, 0.44);
+  cursor: pointer;
+}
+
+
+
+/* =========== BOOTSTRAP OVERRIDE ============== */
+textarea:focus,
+button[type="submit"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+.uneditable-input:focus {
+  border: none;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+textarea,
+button[type="submit"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+.uneditable-input{
+  border: none;
+  cursor: pointer;
+}
+
+/* =========== ERROR MESSAGES ============== */
+pre, h1, h2, h3, h4, h5, h6 {
+  color: white;
+}

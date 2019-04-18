@@ -35,11 +35,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'planSimpley',
+    'planSimpleyBE',
+    'planSimpleyFE',
     'webpack_loader',
     'corsheaders',
     'rest_framework',
 ]
+
+# Control how many objects per page are returned
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 15
+# }
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -57,6 +64,7 @@ ROOT_URLCONF = 'liveSimpley.urls'
 TEMPLATES = [
     {
         'BACKEND':  'django.template.backends.django.DjangoTemplates',
+        # Point Django to templates DIR added at project root
         'DIRS':     [],
         'APP_DIRS': True,
         'OPTIONS':  {
