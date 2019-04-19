@@ -5,14 +5,12 @@ import AddActivityForm from './AddActivityForm';
 export default function ActivityPlanner() {
     return (
         <div className={"main_container"}>
-
-                <Fragment>
-                    <ActivityList/>
-                </Fragment>
-                <Fragment>
-                    <AddActivityForm/>
-                </Fragment>
-
+            <Fragment>
+                <ActivityList/>
+            </Fragment>
+            <Fragment>
+                <AddActivityForm/>
+            </Fragment>
         </div>
     );
 }

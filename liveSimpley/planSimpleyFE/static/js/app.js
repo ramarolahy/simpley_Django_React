@@ -17,40 +17,17 @@ $ (function () {
         const oldDesc = prev.val ();
         prev.prop ('readonly', !ro).focus ().val ('').val (oldDesc);
     });
-    /**
-     * Event handler for submit buttons
-     */
-    $ ('button[type="submit"]').click (evt => {
-        // Make sure event does not propagate
-        evt.stopPropagation ();
-    });
 
-    $ ('form[action="/today"]').on ('submit', () => {
-        const input = $ ('input.new_entry_input');
-        if ($ (input).val () === '') {
-            $ (input).addClass ('empty');
-        }
-        setTimeout (() => {
-            $ (input).removeClass ('empty');
-        }, 300);
-    });
 
     // Submit the avatar form automatically once the file is selected
     $ ('#avatarInput').change (() => {
         $ ('#avatarForm').submit ();
     });
 
-    const placeHolder = $ ('div.empty_entry_label');
-    const emptyLabel = $ ('span.addTodo_placeholder');
-    const addBtnPlaceholder = $ ('i.addTodo_placeholder');
 
     const newTodo = $ ('input.new_entry_input');
     const addBtn = $ ('button.new_entry_btn');
 
-    newTodo.submit (() => {
-        $ (this).css ('display', 'none');
-        addBtn.css ('display', 'none');
-    });
 
     // Capture 'Tab' keypress to display new todo entry
     $ (document).on ('keydown', evt => {
@@ -63,17 +40,6 @@ $ (function () {
 
     $ (document).click (evt => {
         const target = $ (evt.target);
-        // Show the input field if user clicks on placeholder and its children or the field itself
-        if (target.is (placeHolder)
-            || target.is (emptyLabel)
-            || target.is (addBtnPlaceholder)
-            || target.is (newTodo)) {
-            addBtn.css ('display', 'block');
-            newTodo.css ('display', 'block').focus ();
-        } else {
-            newTodo.val ('').css ('display', 'none');
-            addBtn.css ('display', 'none');
-        }
         if (!target.is ($ ('span[name="editTodo"] > i.fa-pencil-alt'))) {
             // Set all other inputs to readonly
             $ ('input.entry_label').prop ('readonly', true);
