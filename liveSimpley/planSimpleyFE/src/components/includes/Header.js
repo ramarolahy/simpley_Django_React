@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -11,9 +12,9 @@ class Header extends Component {
                             <label htmlFor="avatarInput"><i className="fas fa-camera-retro"/></label>
                             <div className="wrap navbar-nav">
                                 <input id="checking" type="checkbox" style={{display: 'none'}}/>
-                                <a className="blob nav-link" href="#"><i className="fas nav-btn fa-cog"/></a>
-                                <a className="blob nav-link" href="#"><i className="fas nav-btn fa-wallet"/></a>
-                                <a className="blob nav-link" href="#"><i className="fas nav-btn fa-door-open"/></a>
+                                <Link className="blob nav-link" to="#"><i className="fas nav-btn fa-cog"/></Link>
+                                <Link className="blob nav-link" to="#"><i className="fas nav-btn fa-wallet"/></Link>
+                                <Link className="blob nav-link" to="/logout"><i className="fas nav-btn fa-door-open"/></Link>
                             </div>
                         </div>
                     </div>

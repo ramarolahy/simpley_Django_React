@@ -2,14 +2,18 @@
  * ACTIONS
  */
 import axios from 'axios';
+// To enable app messaging for certain actions
+import {createMessage, returnError} from "./appMessages";
 
-import { GET_ACTIVITIES, DELETE_ACTIVITY, ADD_ACTIVITY, UPDATE_ACTIVITY } from './actionTypes';
+import {GET_ACTIVITIES, DELETE_ACTIVITY, ADD_ACTIVITY, UPDATE_ACTIVITY} from './actionTypes';
 
 // GET ACTIVITIES
 export const getActivities = () => dispatch => {
     // Make API call to django backend
     axios.get('api/activities')
         .then(res => {
+            // This will dispatch CREATE_MESSAGE action once we get res back from GET_ACTIVITIES
+            dispatch(createMessage({activitiesLoaded: "Your activities have been loaded!"}));
             dispatch({
                 type: GET_ACTIVITIES,
                 payload: res.data
@@ -17,7 +21,8 @@ export const getActivities = () => dispatch => {
         })
         .catch(err => {
             if (err) {
-                console.log(err);
+                // This will dspatch GET_ERRORS action
+                dispatch(returnError(err.response.data, err.response.status))
             }
         })
 };
@@ -34,7 +39,8 @@ export const deleteActivity = (id) => dispatch => {
         })
         .catch(err => {
             if (err) {
-                console.log(err);
+                // This will dspatch GET_ERRORS action
+                dispatch(returnError(err.response.data, err.response.status))
             }
         })
 };
@@ -51,7 +57,8 @@ export const addActivity = (activity) => dispatch => {
         })
         .catch(err => {
             if (err) {
-                console.log(err);
+                // This will dspatch GET_ERRORS action
+                dispatch(returnError(err.response.data, err.response.status))
             }
         })
 };
@@ -68,7 +75,8 @@ export const updateActivity = (id, newData) => dispatch => {
         })
         .catch(err => {
             if (err) {
-                console.log(err);
+               // This will dspatch GET_ERRORS action
+                dispatch(returnError(err.response.data, err.response.status))
             }
         })
 };

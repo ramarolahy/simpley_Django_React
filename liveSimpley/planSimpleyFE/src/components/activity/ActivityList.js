@@ -109,7 +109,6 @@ class ActivityList extends Component {
                 </div>
             );
         })
-
     }
 
     render() {

@@ -1,16 +1,16 @@
 import React, {Fragment} from 'react';
+import Header from '../includes/Header';
 import ActivityList from './ActivityList';
 import AddActivityForm from './AddActivityForm';
 
 export default function ActivityPlanner() {
     return (
-        <div className={"main_container"}>
-            <Fragment>
+        <Fragment>
+            <div className={"main_container"}>
                 <ActivityList/>
-            </Fragment>
-            <Fragment>
                 <AddActivityForm/>
-            </Fragment>
-        </div>
+            </div>
+            <Header/>
+        </Fragment>
     );
 }

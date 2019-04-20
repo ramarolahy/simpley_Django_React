@@ -35,18 +35,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'userAccounts',
     'planSimpleyBE',
     'planSimpleyFE',
     'webpack_loader',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
+    'knox'
 ]
 
 # Control how many objects per page are returned
-# REST_FRAMEWORK = {
-#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-#     'PAGE_SIZE': 15
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',
+                                       'rest_framework.authentication.TokenAuthentication'),
+    'DEFAULT_PAGINATION_CLASS':       'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE':                      15
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

@@ -1,7 +1,9 @@
 import { combineReducers} from "redux";
 import activityReducer from './activityReducer';
-import errorReducer from './errorReducer';
+import errorsReducer from './errorsReducer';
+import messagesReducer from './messagesReducer'
+
 
 export default combineReducers({
-    activityReducer, errorReducer
+    activityReducer, errorsReducer, messagesReducer
 });

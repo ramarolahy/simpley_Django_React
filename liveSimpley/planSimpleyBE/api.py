@@ -9,16 +9,28 @@ class ActivityViewSet(viewsets.ModelViewSet):
     serializer_class = ActivitySerializer
     queryset = Activity.objects.all()
     # To be changed when adding user auth
-    permission_classes = [permissions.AllowAny]
+    # permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        '''
+        ViewSet method to only return
+        '''
+        return self.request.user.activities.all()
+
+    def perform_create(self, serializer):
+        '''
+        ViewSet method to automatically save user as activity owner
+        :param serializer:
+        :return:
+        '''
+        serializer.save(owner=self.request.user)
 
 
 # User Viewset
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    """
-            A simple ViewSet for listing or retrieving users.
-            """
 
     def list(self, request):
         queryset = User.objects.all()

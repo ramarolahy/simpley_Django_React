@@ -371,10 +371,11 @@ span.wrap__icon_info-menu {
 }
 
 p.welcome-text {
-    padding-top: 50px;
+    padding-top: 0px;
+    margin: 0 -20px 0 0;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    font-size: 1.7em;
+    font-size: 1.2em;
 }
 
 /* =========== LINKS ============== */
@@ -443,7 +444,7 @@ li.nav-item {
 }
 
 form#loginForm, form#signupForm {
-    padding-top: 45px;
+    padding-top: 0 ;
     width: 450px;
 }
 

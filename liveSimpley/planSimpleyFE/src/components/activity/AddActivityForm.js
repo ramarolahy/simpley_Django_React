@@ -78,7 +78,7 @@ class AddActivityForm extends Component {
                     {/*    </span>*/}
                     {/*</div>*/}
                     <input type="text" className={"new_entry_input"} style={{display: "block"}} ref={ el => this._newEntryInput = el} name="title" autoComplete="off"
-                    placeholder={"Take over the world ..."} onChange={this.onChange} required/>
+                    placeholder={"Take over the world ..."} onChange={this.onChange}/>
                     <button type="submit" className={"all_btn new_entry_btn"} style={{display: "block"}}  ref={ el => this._newEntryBtn = el} name={"addTodo"}>
                         <i className={"fas fa-plus addTodo"} />
                     </button>
