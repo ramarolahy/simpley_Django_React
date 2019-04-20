@@ -7,11 +7,13 @@ import {Provider} from 'react-redux';
 
 
 import Alerts from './includes/Alerts';
+import PrivateRoute from './utils/PrivateRoute'
 import Login from './authentication/Login'
 import Signup from './authentication/Signup'
 import ActivityPlanner from './activity/ActivityPlanner';
 
 import store from '../store'
+import {loadUser} from "../actions/authenticate";
 
 // Alert Options
 const alertOptions = {
@@ -21,6 +23,11 @@ const alertOptions = {
 };
 
 class App extends Component {
+
+    componentDidMount() {
+        store.dispatch(loadUser())
+    }
+
     render() {
         return (
             <Provider store={store}>
@@ -30,9 +37,9 @@ class App extends Component {
                             {/*<Alerts/>*/}
                             <div className="container">
                                 <Switch>
-                                    <Route exact path={"/"} component={ActivityPlanner}/>
                                     <Route exact path={"/login"} component={Login}/>
                                     <Route exact path={"/signup"} component={Signup}/>
+                                    <PrivateRoute exact path={"/"} component={ActivityPlanner}/>
                                 </Switch>
                             </div>
                         </Fragment>

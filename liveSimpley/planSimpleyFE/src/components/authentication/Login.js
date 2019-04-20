@@ -1,21 +1,32 @@
 import React, {Component, Fragment} from 'react';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {login} from "../../actions/authenticate";
 
 class Login extends Component {
     // Component level state
     state = {
-        email: '',
+        username: '',
         password: '',
+    };
+
+    static propTypes = {
+        login: PropTypes.func.isRequired,
+        isAuthenticated: PropTypes.bool
     };
 
     onSubmit = evt => {
         evt.preventDefault();
-        console.log('submit');
+        this.props.login(this.state.username, this.state.password)
     };
 
-    onChange = evt => this.setState({[evt.target.name]: evt.target.value});
+    onChange = evt => {
+        this.setState({[evt.target.name]: evt.target.value});
+    }
 
   render() {
+        if(this.props.isAuthenticated) { return <Redirect to={"/"}/>}
         const { username, password } = this.state;
         return (
            <Fragment>
@@ -36,7 +47,7 @@ class Login extends Component {
                        </div>
                         <div className="form-group">
                            <label htmlFor="password" className="text-white">Password</label>
-                           <input type="text" name="password" className="form-control" id="password"
+                           <input type="password" name="password" className="form-control" id="password"
                                   autoComplete="off" placeholder="Enter password"  onChange={this.onChange} value={password}  required/>
                        </div>
                        <button type="submit" id="signup" className="btn btn-primary mt-4">Enter</button>
@@ -50,4 +61,8 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+    isAuthenticated: state.authReducer.isAuthenticated
+})
+
+export default connect(mapStateToProps, {login})(Login);

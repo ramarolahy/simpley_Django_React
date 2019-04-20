@@ -26,6 +26,17 @@ body {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
+.spinningBubbles {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, 40vh);
+    -moz-transform: translate(-50%, 40vh);
+    -ms-transform: translate(-50%, 40vh);
+    -o-transform: translate(-50%, 40vh);
+    transform: translate(-50%, 40vh);
+}
+
 /* =========== NAVBAR - RADIAL MENU ============== */
 /* ===================================== */
 
@@ -556,10 +567,14 @@ button#login, button#signup {
 }
 
 button#login:hover, button#signup:hover {
-    bottom: 2px;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    transform: scale(1.03);
+    -webkit-box-shadow: 0 0.5px 15px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 0.5px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0.5px 15px rgba(0, 0, 0, 0.7);
 }
 
 button.hidden.wrap__icon_info-delete {

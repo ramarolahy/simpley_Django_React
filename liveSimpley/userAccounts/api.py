@@ -1,13 +1,13 @@
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from knox.models import AuthToken
-from .serializers import *
+from .serializers import UserSerializer, LoginSerializer, SignupSerializer
 
 
 # Registration API
 # SEE https://www.django-rest-framework.org/api-guide/generic-views/#genericapiview
-class RegisterAPI(generics.GenericAPIView):
-    serializer_class = RegisterSerializer
+class SignupAPI(generics.GenericAPIView):
+    serializer_class = SignupSerializer
 
     def post(self, request, *args, **kwargs):
         # Serialize request data
@@ -20,7 +20,7 @@ class RegisterAPI(generics.GenericAPIView):
             # Send back the serialized (JSON) user
             "user":  UserSerializer(user, context=self.get_serializer_context()).data,
             # Create then Send back a token for the created user
-            # Access second position as it returns a tuple
+            # Access second position as it now returns a tuple
             "token": AuthToken.objects.create(user)[1]
         })
 

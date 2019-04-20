@@ -5,10 +5,10 @@ import {CREATE_MESSAGE, GET_ERRORS} from "./actionTypes";
  * @param msg
  * @returns {{payload: *, type: string}}
  */
-export const createMessage = msg => {
+export const createMessage = message => {
     return {
         type: CREATE_MESSAGE,
-        payload: msg
+        payload: message
     }
 };
 
@@ -18,9 +18,9 @@ export const createMessage = msg => {
  * @param status
  * @returns {{payload: {msg: *, status: *}, type: string}}
  */
-export const returnError = (msg, status) => {
+export const returnError = (errorMessage, status) => {
     return {
         type: GET_ERRORS,
-        payload: { msg, status}
+        payload: { errorMessage, status}
     }
 };

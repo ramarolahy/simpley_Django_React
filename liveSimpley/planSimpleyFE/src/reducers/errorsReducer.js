@@ -1,5 +1,8 @@
 import {GET_ERRORS} from '../actions/actionTypes';
 
+/** ===============
+ *  ACTION CREATORS
+ */
 const initialState = {
     errorMessage: {},
     status: null

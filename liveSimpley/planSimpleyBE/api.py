@@ -7,7 +7,6 @@ from .serializers import *
 # Activity Viewset
 class ActivityViewSet(viewsets.ModelViewSet):
     serializer_class = ActivitySerializer
-    queryset = Activity.objects.all()
     # To be changed when adding user auth
     # permission_classes = [permissions.AllowAny]
     permission_classes = [permissions.IsAuthenticated]

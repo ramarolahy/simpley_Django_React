@@ -4,19 +4,21 @@
 import axios from 'axios';
 // To enable app messaging for certain actions
 import {createMessage, returnError} from "./appMessages";
+import {setConfig} from "./authenticate";
 
 import {GET_ACTIVITIES, DELETE_ACTIVITY, ADD_ACTIVITY, UPDATE_ACTIVITY} from './actionTypes';
 
 // GET ACTIVITIES
-export const getActivities = () => dispatch => {
+export const getActivities = () => (dispatch, getState) => {
     // Make API call to django backend
-    axios.get('api/activities')
+    axios.get('api/activities', setConfig(getState))
         .then(res => {
             // This will dispatch CREATE_MESSAGE action once we get res back from GET_ACTIVITIES
             dispatch(createMessage({activitiesLoaded: "Your activities have been loaded!"}));
+            console.log(res.data);
             dispatch({
                 type: GET_ACTIVITIES,
-                payload: res.data
+                payload: res.data.results
             });
         })
         .catch(err => {
@@ -28,9 +30,9 @@ export const getActivities = () => dispatch => {
 };
 
 // DELETE ACTIVITY
-export const deleteActivity = (id) => dispatch => {
+export const deleteActivity = (id) => (dispatch, getState) => {
     // Make API call to django backend
-    axios.delete(`api/activities/${id}`)
+    axios.delete(`api/activities/${id}`, setConfig(getState))
         .then(() => {
             dispatch({
                 type: DELETE_ACTIVITY,
@@ -46,9 +48,9 @@ export const deleteActivity = (id) => dispatch => {
 };
 
 // ADD ACTIVITY
-export const addActivity = (activity) => dispatch => {
+export const addActivity = (activity) => (dispatch, getState) => {
     // Make API call to django backend
-    axios.post('api/activities/', activity)
+    axios.post('api/activities/', activity, setConfig(getState))
         .then(res => {
             dispatch({
                 type: ADD_ACTIVITY,
@@ -64,9 +66,9 @@ export const addActivity = (activity) => dispatch => {
 };
 
 // ADD ACTIVITY
-export const updateActivity = (id, newData) => dispatch => {
+export const updateActivity = (id, newData) => (dispatch, getState) => {
     // Make API call to django backend
-    axios.put(`api/activities/${id}/`, newData)
+    axios.put(`api/activities/${id}/`, newData, setConfig(getState))
         .then(res => {
             dispatch({
                 type: UPDATE_ACTIVITY,

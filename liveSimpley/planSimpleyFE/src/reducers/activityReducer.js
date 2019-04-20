@@ -1,10 +1,9 @@
+import {GET_ACTIVITIES, DELETE_ACTIVITY, ADD_ACTIVITY, UPDATE_ACTIVITY} from '../actions/actionTypes.js'
+import {LOGOUT_SUCCESS} from "../actions/actionTypes";
 
-/**
+/** ===============
  *  ACTION CREATORS
  */
-import {GET_ACTIVITIES, DELETE_ACTIVITY, ADD_ACTIVITY, UPDATE_ACTIVITY} from '../actions/actionTypes.js'
-
-
 const initialState = {
     activities: []
 };
@@ -30,9 +29,14 @@ export default function (state = initialState, action) {
         case UPDATE_ACTIVITY:
             return {
                 ...state,
-                activities: state.activities.map( activity => activity.id === action.payload.id ?
-                    { ...activity, complete: action.payload.complete} : activity
+                activities: state.activities.map(activity => activity.id === action.payload.id ?
+                    {...activity, complete: action.payload.complete} : activity
                 )
+            };
+        case LOGOUT_SUCCESS:
+            return {
+                ...state,
+                activities: []
             };
         default:
             return state

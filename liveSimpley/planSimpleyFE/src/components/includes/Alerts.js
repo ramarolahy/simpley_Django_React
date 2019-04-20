@@ -10,19 +10,25 @@ export class Alerts extends Component {
     };
 
     componentDidUpdate(prevProps) {
-        const {error, alert} = this.props;
+        const {error, alert, message} = this.props;
         if (error !== prevProps.error) {
             // This will call GET_ERRORS action if we forget to fill in activity title
-            if (error.errorMessage.title) alert.error(`Name: ${error.errorMessage.name.join()}`)
+            if (error.errorMessage.title) alert.error(`Title: ${error.errorMessage.name.join()}`);
+            if (error.errorMessage.non_field_errors) alert.error(`${error.errorMessage.non_field_errors.join()}`);
+            if (error.errorMessage.username) alert.error(`${error.errorMessage.username.join()}`)
         }
         if(message !== prevProps.message) {
             // This will call GET_MESSAGES action once activities have been loaded
-            if(message.activitiesLoaded) alert.success(message.activitiesLoaded)
+            if(message.activitiesLoaded) alert.success(message.activitiesLoaded);
+            if(message.passwordsDoNotMatch) alert.success(message.passwordsDoNotMatch);
+            if(message.youMayLoginNow) alert.error(message.youMayLoginNow);
         }
     }
 
     render() {
-        return  <Fragment />
+        return  (
+            <Fragment/>
+        )
     }
 }
 
