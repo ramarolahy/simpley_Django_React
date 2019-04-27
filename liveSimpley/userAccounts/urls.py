@@ -5,8 +5,8 @@ from knox import views as knox_views
 
 urlpatterns = [
     # This will include login and logout endpoints
-    path('api/auth/login', LoginAPI.as_view()),
-    path('api/auth/signup', SignupAPI.as_view()),
-    path('api/auth/user', UserAPI.as_view()),
-    path('api/auth/logout', knox_views.LogoutView.as_view(), name='knox_logout')
+    path('api/login', LoginAPI.as_view()),
+    path('api/signup', SignupAPI.as_view()),
+    path('api/user', UserAPI.as_view()),
+    path('api/logout', knox_views.LogoutView.as_view(), name='knox_logout')
 ]

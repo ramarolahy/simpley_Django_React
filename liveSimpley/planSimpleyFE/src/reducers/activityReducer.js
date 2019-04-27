@@ -30,7 +30,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 activities: state.activities.map(activity => activity.id === action.payload.id ?
-                    {...activity, complete: action.payload.complete} : activity
+                    action.payload : activity
                 )
             };
         case LOGOUT_SUCCESS:

@@ -46,7 +46,7 @@ class Signup extends Component {
         return (
             <Fragment>
                 <svg className={"big-log"} viewBox={"0 0 10 2"}>
-                    <text x="5" y="1" alignmentBaseline="middle" textAnchor="middle" fontSize="1" fill="none"
+                    <text className="svg_path" x="5" y="1" alignmentBaseline="middle" textAnchor="middle" fontSize="1" fill="none"
                           strokeWidth=".02" stroke="#fff" fontFamily="Pacifico, sans-serif" letterSpacing="0.02px">
                         Simpley
                     </text>

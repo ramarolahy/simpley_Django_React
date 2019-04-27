@@ -26,7 +26,7 @@ export const login = (username, password) => dispatch => {
         headers: {'Content-Type': 'application/json'}
     };
     // Send request for user with headers config
-    axios.post('/api/auth/login', body, config)
+    axios.post('/api/login', body, config)
         .then(res => {
             dispatch({
                 type: LOGIN_SUCCESS,
@@ -51,7 +51,7 @@ export const signup = ({username, email, password}) => dispatch => {
         headers: {'Content-Type': 'application/json'}
     };
     // Send request for user with headers config
-    axios.post('/api/auth/signup', body, config)
+    axios.post('/api/signup', body, config)
         .then(res => {
             dispatch({
                 type: SIGNUP_SUCCESS,
@@ -94,7 +94,7 @@ export const loadUser = () => (dispatch, getState) => {
     dispatch({type: USER_LOADING});
 
     // Send request for user with headers config
-    axios.get('/api/auth/user', setConfig(getState))
+    axios.get('/api/user', setConfig(getState))
         .then(res => {
             dispatch({
                 type: USER_LOADED,
@@ -113,7 +113,7 @@ export const loadUser = () => (dispatch, getState) => {
 // Logout the user
 export const logout = () => (dispatch, getState) => {
     // Send request for user with headers config
-    axios.post('/api/auth/logout', null, setConfig(getState))
+    axios.post('/api/logout', null, setConfig(getState))
         .then(res => {
             dispatch({
                 type: LOGOUT_SUCCESS

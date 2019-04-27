@@ -15,15 +15,15 @@ export const getActivities = () => (dispatch, getState) => {
         .then(res => {
             // This will dispatch CREATE_MESSAGE action once we get res back from GET_ACTIVITIES
             dispatch(createMessage({activitiesLoaded: "Your activities have been loaded!"}));
-            console.log(res.data);
             dispatch({
                 type: GET_ACTIVITIES,
-                payload: res.data.results
+                payload: res.data//.results  // Sometimes needs .results? WHY??
             });
         })
         .catch(err => {
             if (err) {
                 // This will dspatch GET_ERRORS action
+                console.log(err.response.data);
                 dispatch(returnError(err.response.data, err.response.status))
             }
         })
@@ -78,6 +78,7 @@ export const updateActivity = (id, newData) => (dispatch, getState) => {
         .catch(err => {
             if (err) {
                // This will dspatch GET_ERRORS action
+                console.log(err);
                 dispatch(returnError(err.response.data, err.response.status))
             }
         })

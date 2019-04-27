@@ -14,7 +14,7 @@ export const createMessage = message => {
 
 /**
  * Action to get error messages
- * @param msg
+ * @param errorMessage
  * @param status
  * @returns {{payload: {msg: *, status: *}, type: string}}
  */

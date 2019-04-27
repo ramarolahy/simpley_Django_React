@@ -1,3 +1,305 @@
+@media only screen and (max-width: 900px) {
+    div.wrap__navbar-brand {
+        position: relative;
+        width: 300px;
+    }
+
+    div#radial-container {
+        position: fixed;
+        left: 0px;
+        width: 1em !important;
+        height: 1em !important;
+        bottom: 0px;
+        border-radius: 50%;
+    }
+
+    div.avatar {
+        position: absolute;
+        /* Check position inside navbar */
+        left: 15px !important;
+        bottom: 15px !important;
+        width: 80px !important;
+        height: 80px !important;
+        border: 3px solid #48606b;
+    }
+
+    div.wrap {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        bottom: 0;
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 50%;
+        opacity: 10;
+        -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        filter: url("#filter");
+        -webkit-filter: url("#filter");
+    }
+
+
+    i.fas.nav-btn {
+        position: absolute;
+        font-size: 1.1em !important;
+        color: rgba(81, 111, 134, 0.8) !important;
+        top: 20%;
+        left: 50%;
+        background-color: transparent;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    i.fa-check.false:hover {
+        color: rgba(18, 53, 61, 0.44);
+    }
+
+    i.fas.nav-btn {
+        font-size: 1em !important;
+    }
+
+    #deleteTodos:checked ~ i {
+        color: rgb(205, 92, 92) !important;
+    }
+
+    i.menu_delete.fas.fa-trash-alt:hover {
+        color: rgba(205, 92, 92, 0.29) !important;
+    }
+
+    /* second child: settings button */
+    div.wrap > #checking ~ .blob:nth-child(2) {
+        left: 0;
+        bottom: 3em !important;
+    }
+
+    /* second child: planner button */
+    div.wrap > #checking ~ .blob:nth-child(3) {
+        left: 2.2em !important;
+        bottom: 2.2em !important;
+    }
+
+    /* second child: logout button */
+    /*div.wrap > #checking ~ .blob:nth-child(4) {*/
+    #logout {
+        position: fixed;
+        right: 3em !important;
+        bottom: 3em;
+    }
+
+    i.fas.nav-btn.fa-door-open {
+        color: #516f86;
+        font-size: 2em !important;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding-top: 0px !important;
+        padding-bottom: 50px;
+        overflow-y: scroll;
+        font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
+        background: linear-gradient(rgb(28, 45, 54), rgb(17, 27, 32)) no-repeat fixed;
+    }
+
+    form#loginForm, form#signupForm {
+        width: 90% !important;
+    }
+
+    .svg_path {
+        font-size: .1em !important;
+    }
+
+    p.welcome-text {
+        padding-top: 0px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 1.2em !important;
+    }
+
+    div.card.bg-transparent {
+        padding: 0px !important;
+    }
+
+
+    /* second child: settings button */
+    div.wrap > #checking ~ .blob:nth-child(2) {
+        left: 0;
+        bottom: 3em !important;
+    }
+
+    /* second child: planner button */
+    div.wrap > #checking ~ .blob:nth-child(3) {
+        left: 2.2em !important;
+        bottom: 2.2em !important;
+    }
+
+    /* second child: logout button */
+    div.wrap > #checking ~ .blob:nth-child(4) {
+        left: 3em !important;
+        bottom: 0em;
+    }
+
+    #logout {
+        position: fixed;
+        right: 2em !important;
+        bottom: 3em;
+    }
+
+    i.fas.nav-btn.fa-door-open {
+        color: #516f86;
+        font-size: 2em !important;
+    }
+
+    /*  ============ TODAY ================*/
+    div.auth_wrap {
+        padding-top: 15% !important;
+    }
+
+    div.main_container {
+        background-color: rgba(0, 0, 0, 0.09);
+        padding: 15px 5px 120px 5px !important;
+        min-width: 100% !important;
+        width: 100% !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        overflow-y: scroll !important;
+        position: absolute;
+    }
+
+    div.input_wrap {
+        width: 100% !important;
+        height: 70px;
+        bottom: 5px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-bottom: 20px;
+        position: fixed;
+    }
+
+    div.wrap-home-links {
+        bottom: 10% !important;
+        position: relative;
+        height: 300px;
+    }
+
+    div.wrap_home__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(38, 113, 96, 0.69);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        width: 300px;
+        padding: 50px 30px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    div.wrap_home__icon:hover {
+        box-shadow: 0px 3px 30px 5px rgba(8, 11, 17, 0.92);
+    }
+
+    div.entry_item_wrap, div.entry_item_wrap.true {
+        background-color: rgba(68, 211, 229, 0.03);
+        border: 0.5px solid rgba(52, 72, 92, 0.6);
+        border-radius: 5px;
+        width: 100% !important;
+        height: 60px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    div.entry_item_wrap.true {
+        background-color: rgba(48, 123, 141, 0.03);
+        border: none;
+    }
+
+    div.empty_entry_item_wrap {
+        background-color: rgba(28, 54, 69, 0.88);
+        border: none;
+        border-radius: 5px;
+        width: 600px;
+        height: 60px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+
+    div.entry_item_wrap:hover {
+        border: 0.5px solid rgb(22, 108, 149);
+        background-color: rgba(13, 38, 48, 0.88);
+        box-shadow: 0px 0.5px 7px rgba(0, 0, 0, 0.26);
+        bottom: 0.5px;
+    }
+
+
+    div.empty_entry_item_wrap {
+        width: 100% !important;
+        height: 60px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    input.new_entry_input {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+        background-color: rgb(16, 20, 22);
+        border-radius: 5px;
+        box-shadow: 0px 2px 15px rgb(9, 15, 19);
+        padding-left: 60px !important;
+        color: rgb(187, 202, 212);
+        font-size: 1.3em !important;
+        height: 60px !important;
+        width: 100% !important;
+    }
+
+    i.hidden.icon_info.delete__todo {
+        right: 50px !important;
+    }
+
+    button.new_entry_btn {
+        top: 32px;
+        left: 10px !important;
+    }
+
+    div.wrap-home-links {
+        top: 40%;
+        position: relative;
+        height: auto;
+    }
+
+    div.wrap_home__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(38, 113, 96, 0.69);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        width: 100px;
+        padding: 50px 30px;
+        height: auto;
+        cursor: pointer;
+    }
+
+}
+
 /* =========== PAGE ============== */
 html {
     min-height: 100vh;
@@ -65,9 +367,9 @@ div.avatar {
     border-radius: 50%;
     z-index: 99;
     cursor: pointer;
-    background-position: center, center; /* Center the image */
-    background-repeat: no-repeat, no-repeat; /* Do not repeat the image */
-    background-size: cover, cover; /* Resize the background image to cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 80%; /* Resize the background image to cover the entire container */
     -webkit-box-shadow: 0 7px 20px rgba(0, 0, 0, 0.7);
     -moz-box-shadow: 0 7px 20px rgba(0, 0, 0, 0.7);
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.7);
@@ -189,6 +491,16 @@ div.wrap > #checking ~ .blob:nth-child(4) {
     bottom: 0px;
 }
 
+i.fas.nav-btn.fa-door-open {
+    color: #516f86;
+    font-size: 3em;
+}
+
+#logout {
+    position: fixed;
+    right: 3em !important;
+    bottom: 4em;
+}
 
 /* ===================================== */
 /* ===================================== */
@@ -206,6 +518,45 @@ div.wrap__error_msg {
 
 div.jumbotron {
     height: 180px;
+}
+
+
+div.container--summary {
+    background-color: rgba(0, 0, 0, 0.09);
+    min-width: 640px;
+    height: 100px;
+    border-radius: 0 0 3px 3px;
+    padding: 5px 20px 3px 20px;
+    width: auto;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.wrap--info {
+    width: 50%;
+}
+
+.info--amount {
+    color: green;
+    font-size: 1.1em;
+}
+
+.info--planned_expenses {
+    text-align: right;
+    float: right;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+.amount--planned_expenses {
+    font-size: 3em;
 }
 
 div.main_container {
@@ -455,7 +806,7 @@ li.nav-item {
 }
 
 form#loginForm, form#signupForm {
-    padding-top: 0 ;
+    padding-top: 0;
     width: 450px;
 }
 
