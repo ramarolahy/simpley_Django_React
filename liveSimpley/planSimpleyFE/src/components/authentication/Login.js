@@ -35,9 +35,6 @@ class Login extends Component {
                       Simpley
                   </text>
                </svg>
-               <p className="welcome-text text-white text-center">
-                    Welcome to Simpley, a simple and easy way to plan your day!
-               </p>
                <div className="card bg-transparent border-0 px-5 py-5">
                    <form id="loginForm" className="mx-auto" onSubmit={this.onSubmit}>
                        <div className="form-group">
