@@ -1,15 +1,3 @@
-# final-project
-My final project is a task management build with the Django REST Framework, SQLite3, and ReactJS as frontend.
-Users can signup for an account, login, Create, Read, Update, and Delete tasks. The is mobile friendly so the user can
-plan while on the go. 
-
-# Outside Resources
-+ http://v1k45.com/blog/modern-django-part-1-setting-up-django-and-react/
-+ https://github.com/owais/django-webpack-loader
-+ https://www.fusionbox.com/blog/detail/create-react-app-and-django/624/
-+ https://docs.djangoproject.com/en/2.2/topics/serialization/
-+ https://www.django-rest-framework.org/
-+ http://james1345.github.io/django-rest-knox/auth/
 
 # Project structure
 ```
@@ -109,6 +97,4 @@ plan while on the go.
 ├── package.json
 └── webpack.config.js
 ```
-# Note to the TA
-Other than the packages on requirements.txt, you will need to run ```npm install``` at the root of the project to install necessary
-packages for ReactJS.
+
